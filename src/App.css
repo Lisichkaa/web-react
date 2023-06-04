@@ -9,7 +9,7 @@ body {
   color: var(--tg-theme-text-color);
 } */
 body{
-  background-color: rgba(194, 53, 199, 0.5);
+  background-color: rgba(0, 53, 199, 0.5);
   color: #fff;
 }
 .products__container{

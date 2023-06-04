@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './ProductList.css';
 import ProductItem from "../ProductItem/ProductItem";
-import {telegramUse} from "../../telegram/telegramUse";
+import { telegramUse } from '../../telegram/telegramm';
 import {useCallback, useEffect} from "react";
 // import squirrelImg from "../../images/belochka.jpg";
 // import coffeeImg from "../../images/coffee.png";
@@ -97,7 +97,7 @@ const ProductList = () => {
             {products.map(item => (
                 <ProductItem
                     product={item}
-                    //key = {item.id} -хз что это...
+                    //key = {item.id} - хз что это...
                     onAdd={onAdd}
                     onRemove={onRemove}
                 />

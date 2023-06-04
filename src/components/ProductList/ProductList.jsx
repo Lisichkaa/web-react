@@ -34,7 +34,7 @@ const ProductList = () => {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(data)
-        }).then(() => console.log("ADDED"));
+        })
     }, [queryId])
 
     useEffect(() => {

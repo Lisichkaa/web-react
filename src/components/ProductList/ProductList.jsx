@@ -21,7 +21,7 @@ const products = getData();
 
 const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
-    const {tg, queryId} = telegramUse();
+    const {tg, queryId, onClose} = telegramUse();
 
     const onSendData = useCallback(() => {
         const data = {
@@ -38,11 +38,11 @@ const ProductList = () => {
     }, [queryId])
 
     useEffect(() => {
-        tg.onEvent('mainButtonClicked', onSendData)
+        tg.onEvent('mainButtonClicked', onClose)
         return () => {
-            tg.offEvent('mainButtonClicked', onSendData)
+            tg.offEvent('mainButtonClicked', onClose)
         }
-    }, [onSendData, tg])
+    }, [onClose, tg])
 
     const onAdd = (product) => {
         const alreadyAdded = addedItems.find(item => item.id === product.id);

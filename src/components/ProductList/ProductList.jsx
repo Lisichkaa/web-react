@@ -97,7 +97,7 @@ const ProductList = () => {
             {products.map(item => (
                 <ProductItem
                     product={item}
-                    //key = {item.id} - я хз что это...
+                    //key = {item.id} -хз что это...
                     onAdd={onAdd}
                     onRemove={onRemove}
                 />

@@ -26,7 +26,7 @@ const ProductList = () => {
     const onSendData = useCallback(() => {
         const data = {
             //products: addedItems,
-            queryId,
+            queryId: queryId,
         }
         fetch('http://77.105.172.214:8000/web-data', {
             method: 'POST',

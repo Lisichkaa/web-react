@@ -26,29 +26,43 @@ const ProductList = () => {
 
     
 
+     const onSendData = useCallback(() => {
+        const data = {
+            //products: addedItems,
+            //totalPrice: getTotalPrice(addedItems),
+            queryId: queryId ,
+        }
+        fetch('http://85.119.146.179:8000/web-data', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+    }, [queryId])
 
-    const onSendData = useCallback(() => {
-        const article = {
-            queryId: queryId
-        };
-        const headers = { 
-            'Content-Type': 'application/json'
-        };
+//    const onSendData = useCallback(() => {
+//         const article = {
+//             queryId: queryId
+//         };
+//         const headers = { 
+//             'Content-Type': 'application/json'
+//         };
 
-        axios.post("http://77.105.172.214:8000/web-data", article, {headers} ).then((response) => {
-      console.log(response.status, response.data.token);
-    });
+//         axios.post("http://77.105.172.214:8000/web-data", article, {headers} ).then((response) => {
+//       console.log(response.status, response.data.token);
+//     });
         // axios.post('http://77.105.172.214:8000/web-data', article, { headers })
         // .then(response => this.setState({ articleId: response.data.id })) 
 
-        // fetch('http://77.105.172.214:8000/web-data', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify(queryId)
-        // })
-    })
+//         fetch('http://77.105.172.214:8000/web-data', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json',
+//             },
+//             body: JSON.stringify(data)
+//         })
+//     })
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)

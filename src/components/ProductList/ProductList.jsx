@@ -3,7 +3,7 @@ import './ProductList.css';
 import ProductItem from "../ProductItem/ProductItem";
 import { telegramUse } from '../../telegram/telegramm';
 import {useCallback, useEffect} from "react";
-import axios from "axios";
+//import axios from "axios";
 // import squirrelImg from "../../images/belochka.jpg";
 // import coffeeImg from "../../images/coffee.png";
 // import questionImg from "../../images/question.png";

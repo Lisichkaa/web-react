@@ -38,11 +38,11 @@ const ProductList = () => {
     }, [queryId])
 
     useEffect(() => {
-        tg.onEvent('mainButtonClicked', onClose)
+        tg.onEvent('mainButtonClicked', onSendData)
         return () => {
-            tg.offEvent('mainButtonClicked', onClose)
+            tg.offEvent('mainButtonClicked', onSendData)
         }
-    }, [onClose, tg])
+    }, [onSendData, tg])
 
     const onAdd = (product) => {
         const alreadyAdded = addedItems.find(item => item.id === product.id);

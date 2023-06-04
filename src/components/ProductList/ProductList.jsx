@@ -3,6 +3,7 @@ import './ProductList.css';
 import ProductItem from "../ProductItem/ProductItem";
 import { telegramUse } from '../../telegram/telegramm';
 import {useCallback, useEffect} from "react";
+import axios from "axios";
 // import squirrelImg from "../../images/belochka.jpg";
 // import coffeeImg from "../../images/coffee.png";
 // import questionImg from "../../images/question.png";
@@ -23,16 +24,31 @@ const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
     const {tg, queryId, onClose} = telegramUse();
 
+    
+
+
     const onSendData = useCallback(() => {
-        
-        fetch('http://77.105.172.214:8000/web-data', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(queryId)
-        })
-    }, [queryId])
+        const article = {
+            queryId: queryId
+        };
+        const headers = { 
+            'Content-Type': 'application/json'
+        };
+
+        axios.post("http://77.105.172.214:8000/web-data", article, {headers} ).then((response) => {
+      console.log(response.status, response.data.token);
+    });
+        // axios.post('http://77.105.172.214:8000/web-data', article, { headers })
+        // .then(response => this.setState({ articleId: response.data.id })) 
+
+        // fetch('http://77.105.172.214:8000/web-data', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify(queryId)
+        // })
+    })
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)

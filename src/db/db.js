@@ -11,6 +11,7 @@ export function getData() {
     { title: "Вопросики", amount: 1000, Image: questionImg,id:2 },
     { title: "Булочка с листиком", amount: 99999, Image: cakeImg, id:6 },
     { title: "Кофе", amount: 10000, Image: coffeeImg , id:3},
+    //{ title: "Носик", amount: 23, Image: noseImg, id:4 },
     { title: "Булочка с листиком", amount: 0, Image: cakeImg, id:5 },
   ];
 }

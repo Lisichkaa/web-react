@@ -24,6 +24,60 @@ const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
     const {tg, queryId, onClose} = telegramUse();
 
+    
+
+//      const onSendData = useCallback(() => {
+//         const data = {
+//             //products: addedItems,
+//             //totalPrice: getTotalPrice(addedItems),
+//             queryId: queryId ,
+//         }
+//         fetch('http://77.105.172.214:8000/web-data', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json',
+//             },
+//             body: JSON.stringify(data)
+//         })
+//     }, [queryId])
+
+//    const onSendData = useCallback(() => {
+//         const article = {
+//             queryId: queryId
+//         };
+//         const headers = { 
+//             'Content-Type': 'application/json'
+//         };
+
+//         axios.post("http://77.105.172.214:8000/web-data", article, {headers} ).then((response) => {
+//       console.log(response.status, response.data.token);
+//     });
+        // axios.post('http://77.105.172.214:8000/web-data', article, { headers })
+        // .then(response => this.setState({ articleId: response.data.id })) 
+
+//         fetch('http://77.105.172.214:8000/web-data', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json',
+//             },
+//             body: JSON.stringify(data)
+//         })
+//     })
+
+    // const onSendData = useCallback(() => {
+    //     const data = {
+    //         user
+    //     }
+    //     tg.sendData(JSON.stringify(data));
+    // }, [user])
+    
+    // useEffect(() => {
+    //     tg.onEvent('mainButtonClicked', onSendData)
+    //     return () => {
+    //         tg.offEvent('mainButtonClicked', onSendData)
+    //     }
+    // }, [onSendData])
+
     const onAdd = (product) => {
         const alreadyAdded = addedItems.find(item => item.id === product.id);
         let newItems = [];
@@ -58,7 +112,6 @@ const ProductList = () => {
                 item.id === product.id ? {...alreadyAdded, quantity: alreadyAdded.quantity - 1} : item      
               );           
         }
-        
 
         setAddedItems(newItems)
 

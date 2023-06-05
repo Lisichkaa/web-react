@@ -17,45 +17,6 @@ const products = getData();
 const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
     const {tg, queryId, onClose, user} = telegramUse();   
-    
-//      const onSendData = useCallback(() => {
-//         const data = {
-//             //products: addedItems,
-//             //totalPrice: getTotalPrice(addedItems),
-//             queryId: queryId ,
-//         }
-//         fetch('http://77.105.172.214:8000/web-data', {
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/json',
-//             },
-//             body: JSON.stringify(data)
-//         })
-//     }, [queryId])
-
-//    const onSendData = useCallback(() => {
-//         const article = {
-//             queryId: queryId
-//         };
-//         const headers = { 
-//             'Content-Type': 'application/json'
-//         };
-
-//         axios.post("http://77.105.172.214:8000/web-data", article, {headers} ).then((response) => {
-//       console.log(response.status, response.data.token);
-//     });
-        // axios.post('http://77.105.172.214:8000/web-data', article, { headers })
-        // .then(response => this.setState({ articleId: response.data.id })) 
-
-//         fetch('http://77.105.172.214:8000/web-data', {
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/json',
-//             },
-//             body: JSON.stringify(data)
-//         })
-//     })
-
     //const totalAmount = ProductItem.reduce((a,c)=>a + c.amount * c.quantity, 0);
 
     const onSendData = useCallback(() => {

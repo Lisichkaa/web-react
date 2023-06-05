@@ -8,8 +8,9 @@
     justify-content: space-between;
     width: 150px;
     height: 200px;
-    padding: 0.5rem 0.3rem;
+    padding: 0.3rem 0.3rem;
     margin: 13px 1px;
+    position: relative;
   }
 
   .itemCard__title {
@@ -25,7 +26,7 @@
 
   .image__container {
     width: 100px;
-    height: 100px;
+    height: 150px;
     margin: 0 auto;
   }
   

@@ -22,7 +22,7 @@ const products = getData();
 
 const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
-    const {tg, queryId, onClose, user} = telegramUse();
+    const {tg, user, queryId, onClose} = telegramUse();
 
     
 
@@ -66,7 +66,7 @@ const ProductList = () => {
 
     const onSendData = useCallback(() => {
         const data = {
-            user.id
+            user
         }
         tg.sendData(JSON.stringify(data));
     }, [user])
@@ -94,7 +94,7 @@ const ProductList = () => {
         if(newItems.length >= 1) {
             tg.MainButton.show();
             tg.MainButton.setParams({
-                text: `Купить ${tg.initDataUnsafe.user}`
+                text: `Купить ${user}`
             })
         } else {
             tg.MainButton.hide();            
@@ -118,7 +118,7 @@ const ProductList = () => {
         if(newItems.length >= 1) {
             tg.MainButton.show();
             tg.MainButton.setParams({
-                text: `Купить ${tg.initDataUnsafe.user}`
+                text: `Купить ${user}`
             })
         } else {
             tg.MainButton.hide();            

@@ -2,7 +2,7 @@ import Button from "../Button/Button";
 import './ProductItem.css';
 import React, {useState} from 'react';
 
-const ProductItem = ({product, onRemove, onAdd}) => {
+function ProductItem ({product, onRemove, onAdd}) {
     const [count, setCount] = useState(0);
     const {title, Image, amount,id} = product;     
 

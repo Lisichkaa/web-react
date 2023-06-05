@@ -17,7 +17,7 @@ const products = getData();
 const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
     const {tg, queryId, onClose, user} = telegramUse();   
-    //const totalAmount = ProductItem.reduce((a,c)=>a + c.amount * c.quantity, 0);
+    const totalAmount = ProductItem.reduce((a,c)=>a + c.amount * c.quantity, 0);
 
     const onSendData = useCallback(() => {
         const data = {
@@ -93,7 +93,12 @@ const ProductList = () => {
                     onRemove={onRemove}
                 />
             ))}
-        </div>         
+        </div>     
+        <div className="totalAmount__container">     
+          <br /> 
+          <div className="total">Total amount of points: {totalAmount}</div>               
+        </div>    
+
         </>
     );
 };

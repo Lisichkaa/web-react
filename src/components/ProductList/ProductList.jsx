@@ -22,24 +22,24 @@ const products = getData();
 
 const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
-    const {tg, queryId, onClose} = telegramUse();
+    const {tg, queryId, onClose, user} = telegramUse();
 
     
 
-     const onSendData = useCallback(() => {
-        const data = {
-            //products: addedItems,
-            //totalPrice: getTotalPrice(addedItems),
-            queryId: queryId ,
-        }
-        fetch('http://77.105.172.214:8000/web-data', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        })
-    }, [queryId])
+//      const onSendData = useCallback(() => {
+//         const data = {
+//             //products: addedItems,
+//             //totalPrice: getTotalPrice(addedItems),
+//             queryId: queryId ,
+//         }
+//         fetch('http://77.105.172.214:8000/web-data', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json',
+//             },
+//             body: JSON.stringify(data)
+//         })
+//     }, [queryId])
 
 //    const onSendData = useCallback(() => {
 //         const article = {
@@ -64,6 +64,13 @@ const ProductList = () => {
 //         })
 //     })
 
+    const onSendData = useCallback(() => {
+        const data = {
+            user
+        }
+        tg.sendData(JSON.stringify(data));
+    }, [user])
+    
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
         return () => {

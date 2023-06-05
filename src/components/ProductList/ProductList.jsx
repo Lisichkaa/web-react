@@ -56,7 +56,7 @@ const ProductList = () => {
 //         })
 //     })
 
-    const totalAmount = cartItems.reduce((a,c)=>a + c.amount * c.quantity, 0);
+    const totalAmount = ProductItem.reduce((a,c)=>a + c.amount * c.quantity, 0);
 
     const onSendData = useCallback(() => {
         const data = {

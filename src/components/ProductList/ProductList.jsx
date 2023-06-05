@@ -17,7 +17,7 @@ const products = getData();
 const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
     const {tg, queryId, onClose, user} = telegramUse();   
-    const totalAmount = ProductItem.reduce((a,c)=>a + c.amount * c.quantity, 0);
+    const totalAmount = addedItems.reduce((a,c)=>a + c.amount * c.quantity, 0);
 
     const onSendData = useCallback(() => {
         const data = {

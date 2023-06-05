@@ -13,7 +13,7 @@ import {useCallback, useEffect} from "react";
 
 const { getData } = require("../../db/db");
 const products = getData();
-const totalPrice = ProductItem.reduce((a,c)=>a + c.amount * c.quantity, 0);
+
 const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
     const {tg, queryId, onClose, user} = telegramUse();   
@@ -132,11 +132,7 @@ const ProductList = () => {
                     onRemove={onRemove}
                 />
             ))}
-        </div>      
-        {/* <div className="totalAmount__container">     
-          <br /> 
-          <div className="total">Total amount of points: {totalAmount}</div>               
-        </div>           */}
+        </div>         
         </>
     );
 };

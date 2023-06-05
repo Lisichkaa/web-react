@@ -86,7 +86,7 @@ const ProductList = () => {
         if(newItems.length >= 1) {
             tg.MainButton.show();
             tg.MainButton.setParams({
-                text: `Купить ${user}`
+                text: `Купить`
             })
         } else {
             tg.MainButton.hide();            
@@ -110,7 +110,7 @@ const ProductList = () => {
         if(newItems.length >= 1) {
             tg.MainButton.show();
             tg.MainButton.setParams({
-                text: `Купить ${user}`
+                text: `Купить`
             })
         } else {
             tg.MainButton.hide();            

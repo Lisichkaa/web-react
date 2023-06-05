@@ -40,7 +40,7 @@ const ProductList = () => {
         if(newItems.length >= 1) {
             tg.MainButton.show();
             tg.MainButton.setParams({
-                text: `Купить ${queryId}`
+                text: `Купить ${user}`
             })
         } else {
             tg.MainButton.hide();            
@@ -65,7 +65,7 @@ const ProductList = () => {
         if(newItems.length >= 1) {
             tg.MainButton.show();
             tg.MainButton.setParams({
-                text: `Купить ${queryId}`
+                text: `Купить ${user}`
             })
         } else {
             tg.MainButton.hide();            

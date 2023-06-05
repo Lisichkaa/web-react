@@ -7,10 +7,9 @@
     flex-direction: column;
     justify-content: space-between;
     width: 150px;
-    height: 250px;
+    height: 200px;
     padding: 0.5rem 0.3rem;
     margin: 13px 10px;
-    position: relative;
   }
 
   .itemCard__title {
@@ -26,7 +25,7 @@
 
   .image__container {
     width: 100px;
-    height: 100px;
+    height: 150px;
     margin: 0 auto;
   }
   

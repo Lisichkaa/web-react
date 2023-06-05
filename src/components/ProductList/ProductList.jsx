@@ -61,10 +61,10 @@ const ProductList = () => {
     const onSendData = useCallback(() => {
         const data = {
             products: addedItems,
-            totalAmount: totalAmount
+            //totalAmount: totalAmount
         }
         tg.sendData(JSON.stringify(data));
-    }, [addedItems, totalAmount])  
+    }, [addedItems])  
     
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
@@ -122,6 +122,7 @@ const ProductList = () => {
 
     return (
         <>
+        <h4>Order!</h4>
         <div className='products__container'>
             {products.map(item => (
                 <ProductItem
@@ -132,10 +133,10 @@ const ProductList = () => {
                 />
             ))}
         </div>      
-        <div className="totalAmount__container">     
+        {/* <div className="totalAmount__container">     
           <br /> 
           <div className="total">Total amount of points: {totalAmount}</div>               
-        </div>          
+        </div>           */}
         </>
     );
 };

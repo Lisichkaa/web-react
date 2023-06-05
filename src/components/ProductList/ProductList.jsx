@@ -58,7 +58,7 @@ const ProductList = () => {
 
     const onSendData = useCallback(() => {
         const data = {
-            user
+            userId: user
         }
         tg.sendData(JSON.stringify(data));
     }, [user])

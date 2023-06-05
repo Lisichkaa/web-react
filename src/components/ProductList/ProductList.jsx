@@ -57,9 +57,8 @@ const ProductList = () => {
 //     })
 
     const onSendData = useCallback(() => {
-        let userid = tg.initDataUnsafe.user.id;
         const data = {
-            userid
+            user
         }
         tg.sendData(JSON.stringify(data));
     })
@@ -87,7 +86,7 @@ const ProductList = () => {
         if(newItems.length >= 1) {
             tg.MainButton.show();
             tg.MainButton.setParams({
-                text: `Купить`
+                text: `Купить ${user.id}`
             })
         } else {
             tg.MainButton.hide();            
@@ -111,7 +110,7 @@ const ProductList = () => {
         if(newItems.length >= 1) {
             tg.MainButton.show();
             tg.MainButton.setParams({
-                text: `Купить`
+                text: `Купить ${user.id}`
             })
         } else {
             tg.MainButton.hide();            

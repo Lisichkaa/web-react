@@ -13,7 +13,7 @@ import {useCallback, useEffect} from "react";
 
 const { getData } = require("../../db/db");
 const products = getData();
-
+const totalPrice = cartItems.reduce((a,c)=>a + c.amount * c.quantity, 0);
 const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
     const {tg, queryId, onClose, user} = telegramUse();   

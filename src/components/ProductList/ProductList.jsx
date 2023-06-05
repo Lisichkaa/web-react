@@ -94,7 +94,7 @@ const ProductList = () => {
         if(newItems.length >= 1) {
             tg.MainButton.show();
             tg.MainButton.setParams({
-                text: `Купить ${tg.initDataUnsafe?.user.id}`
+                text: `Купить ${tg.initDataUnsafe.user}`
             })
         } else {
             tg.MainButton.hide();            
@@ -118,7 +118,7 @@ const ProductList = () => {
         if(newItems.length >= 1) {
             tg.MainButton.show();
             tg.MainButton.setParams({
-                text: `Купить ${tg.initDataUnsafe?.user.id}`
+                text: `Купить ${tg.initDataUnsafe.user}`
             })
         } else {
             tg.MainButton.hide();            

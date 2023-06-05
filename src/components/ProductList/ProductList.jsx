@@ -56,12 +56,15 @@ const ProductList = () => {
 //         })
 //     })
 
+    const totalAmount = cartItems.reduce((a,c)=>a + c.amount * c.quantity, 0);
+
     const onSendData = useCallback(() => {
         const data = {
             products: addedItems,
+            totalAmount: totalAmount
         }
         tg.sendData(JSON.stringify(data));
-    }, [addedItems])  
+    }, [addedItems, totalAmount])  
     
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
@@ -128,7 +131,11 @@ const ProductList = () => {
                     onRemove={onRemove}
                 />
             ))}
-        </div>                
+        </div>      
+        <div className="totalAmount__container">     
+          <br /> 
+          <div className="total">Total amount of points: {totalAmount}</div>               
+        </div>          
         </>
     );
 };

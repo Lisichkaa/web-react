@@ -9,7 +9,8 @@
     width: 150px;
     height: 200px;
     padding: 0.3rem 0.3rem;
-    margin: 13px 1px;
+    margin: 10px 1px;    
+    position: relative;
   }
 
   .itemCard__title {

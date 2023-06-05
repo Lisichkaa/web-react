@@ -3,12 +3,6 @@ import './ProductList.css';
 import ProductItem from "../ProductItem/ProductItem";
 import { telegramUse } from '../../telegram/telegramm';
 import {useCallback, useEffect} from "react";
-//import axios from "axios";
-// import squirrelImg from "../../images/belochka.jpg";
-// import coffeeImg from "../../images/coffee.png";
-// import questionImg from "../../images/question.png";
-// import cakeImg from "../../images/cake.jpg";
-
 // const products = [
 //     { title: "Белочка", amount: 100, Image: squirrelImg, id:1 },
 //     { title: "Вопросики", amount: 1000, Image: questionImg,id:2 },
@@ -22,9 +16,7 @@ const products = getData();
 
 const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
-    const {tg, queryId, onClose, user} = telegramUse();
-
-    
+    const {tg, queryId, onClose, user} = telegramUse();    
 
 //      const onSendData = useCallback(() => {
 //         const data = {
@@ -94,7 +86,7 @@ const ProductList = () => {
         if(newItems.length >= 1) {
             tg.MainButton.show();
             tg.MainButton.setParams({
-                text: `Купить ${tg.initDataUnsafe.user.id}`
+                text: `Купить ${user}`
             })
         } else {
             tg.MainButton.hide();            
@@ -118,7 +110,7 @@ const ProductList = () => {
         if(newItems.length >= 1) {
             tg.MainButton.show();
             tg.MainButton.setParams({
-                text: `Купить ${tg.initDataUnsafe.user.id}`
+                text: `Купить ${user}`
             })
         } else {
             tg.MainButton.hide();            

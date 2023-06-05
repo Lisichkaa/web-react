@@ -17,7 +17,7 @@ const products = getData();
 const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
     const {tg, queryId, onClose, user} = telegramUse();    
-
+    let userid = tg.initDataUnsafe.user.id;
 //      const onSendData = useCallback(() => {
 //         const data = {
 //             //products: addedItems,
@@ -58,10 +58,10 @@ const ProductList = () => {
 
     const onSendData = useCallback(() => {
         const data = {
-            user
+            userid
         }
         tg.sendData(JSON.stringify(data));
-    }, [user])
+    }, [userid])
     
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)

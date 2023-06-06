@@ -4,11 +4,9 @@ import ProductItem from "../ProductItem/ProductItem";
 import { telegramUse } from '../../telegram/telegramm';
 import {useCallback, useEffect} from "react";
 import {useNavigate} from 'react-router-dom'
-import Cart from "../Cart/Cart";
 
 const { getData } = require("../../db/db");
 const products = getData();
-
 
 const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
@@ -19,7 +17,6 @@ const ProductList = () => {
         products: addedItems,
         totalAmount: totalAmount
     };
-    
     sessionStorage.setItem('cart', JSON.stringify(data));   
     
 

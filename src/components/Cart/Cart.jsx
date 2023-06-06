@@ -2,6 +2,7 @@ import React from 'react';
 import './Cart.css';
 import {useNavigate} from 'react-router-dom'
 import ProductList from '../ProductList/ProductList';
+import CartItem from '../CartItem/CartItem';
 import {useCallback, useEffect} from "react";
 import { telegramUse } from '../../telegram/telegramm';
 //
@@ -14,7 +15,7 @@ function Cart () {
   // }, [])
 
   tg.MainButton.setParams({
-    text: `Купить`
+    text: `Оформить заказ`
   });
 
   const navigate = useNavigate();
@@ -32,14 +33,25 @@ function Cart () {
     }
   }, [onSendData]) 
 
-  return (
+  return (    
+    <>
     <div class="order_header_wrap">      
       <h2 class="order_header">Your Order</h2>
       <div class="order_edit"> 
            <h3><button onClick={goBack}>Edit</button></h3>       
-      </div>
-      
-  </div>
+      </div>      
+    </div>
+
+    <div className='order_container'>    
+            {addedItems.products.map(item => (
+                <CartItem
+                    product={item}
+                />
+            ))}
+        </div>     
+
+    </>
+    
     );
 };
 

@@ -3,7 +3,9 @@ import './Cart.css';
 
 const Cart = () => {
     return (
-      <div>Hello, Cart!</div>
+      <div>
+        Hello, Cart!
+      </div>
     );
 };
 

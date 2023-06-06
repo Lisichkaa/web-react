@@ -42,13 +42,13 @@ function Cart () {
       </div>      
     </div>
 
-    <div className='order_container'>    
+    {/* <div className='order_container'>    
             {addedItems.products.map(item => (
                 <CartItem
                     product={item}
                 />
             ))}
-    </div>    
+    </div>     */}
     <div className="totalAmount__container">     
           <br /> 
           <div className="total">Total amount of points: {addedItems.totalAmount}</div>                        

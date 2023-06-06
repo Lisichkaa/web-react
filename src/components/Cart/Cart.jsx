@@ -9,18 +9,18 @@ function Cart (totalAmount) {
   const navigate = useNavigate();
   const goBack = () => navigate(-1);
      
-//   var obj2 = sessionStorage['cart'];
-//   //это метод для отправки данных в бот сообщением
-//   const onSendData = useCallback(() => {       
-//         tg.sendData(JSON.stringify(obj2));
-//     }, [obj2]) 
-// //здесь ожидаем эвент нажатие на главную кнопку
-//   useEffect(() => {
-//     tg.onEvent('mainButtonClicked', onSendData)
-//       return () => {
-//         tg.offEvent('mainButtonClicked', onSendData)
-//     }
-//   }, [onSendData]) 
+  var obj2 = sessionStorage.getItem('cart');
+  //это метод для отправки данных в бот сообщением
+  const onSendData = useCallback(() => {       
+        tg.sendData(JSON.stringify(obj2));
+    }, [obj2]) 
+//здесь ожидаем эвент нажатие на главную кнопку
+  useEffect(() => {
+    tg.onEvent('mainButtonClicked', onSendData)
+      return () => {
+        tg.offEvent('mainButtonClicked', onSendData)
+    }
+  }, [onSendData]) 
   
   
 

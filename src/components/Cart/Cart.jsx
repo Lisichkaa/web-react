@@ -27,9 +27,11 @@ function Cart (totalAmount) {
 
 
   return (
-    <div class="order_header_wrap">
+    <div class="order_header_wrap">      
       <h2 class="order_header">Your Order</h2>
-      <span class="order_edit">Edit</span>
+      <div class="order_edit"> 
+           <h3>Your order <button onClick={goBack}>Edit</button></h3>       
+      </div>
   </div>
     );
 };

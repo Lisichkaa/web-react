@@ -4,6 +4,7 @@ import ProductItem from "../ProductItem/ProductItem";
 import { telegramUse } from '../../telegram/telegramm';
 import {useCallback, useEffect} from "react";
 import {useNavigate} from 'react-router-dom'
+import Cart from "../Cart/Cart";
 
 const { getData } = require("../../db/db");
 const products = getData();
@@ -29,6 +30,8 @@ const ProductList = () => {
             tg.offEvent('mainButtonClicked', goNext)
         }
     }, [goNext])
+
+    Cart(addedItems);
 
     const onAdd = (product) => {
         const alreadyAdded = addedItems.find(item => item.id === product.id);

@@ -3,7 +3,7 @@ import './Cart.css';
 import {useNavigate} from 'react-router-dom'
 
 
-const Cart = () => {
+function Cart (addedItems) {
 
   const navigate = useNavigate();
   const goBack = () => navigate(-1);

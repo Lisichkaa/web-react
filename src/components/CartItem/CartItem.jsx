@@ -7,7 +7,7 @@ const CartItem = (addedItems) => {
 
     return (
         <div className="order_item_card">          
-          <div className="image__container">
+          <div className="order_image__container">
             <img src={Image} alt={title} />
           </div>
           <h4 className="order_item__title">

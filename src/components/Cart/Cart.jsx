@@ -23,7 +23,7 @@ function Cart () {
 
   var total = sessionStorage.getItem('total');
   const addedItems = sessionStorage.getItem('cart');
-  const total = addedItems.totalAmount
+  //const total = addedItems.totalAmount
   const onSendData = useCallback(() => {       
         tg.sendData(addedItems);
   }, [addedItems]) 

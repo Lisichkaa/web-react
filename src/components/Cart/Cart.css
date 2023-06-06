@@ -19,8 +19,9 @@
     line-height: 18px;
     font-weight: 500;
     color: #31b545;;
+    text-transform: uppercase;
   }
-  
+
   .order_container{
     max-width: 390px;
     display: flex;

@@ -19,7 +19,7 @@ const ProductItem = ({product, onRemove, onAdd}) => {
     const getButton = () => {
         if (count === 0) return  <Button title={"Add"} type={"add"} onClick={handleIncrement}/>;
         else if (count === 1 && title === "23 награды на профиль") return  <Button title={"-"} type={"remove"} onClick={handleDecrement} /> ;
-        else if ((count === 1 && title != "23 награды на профиль")) return <div>              
+        else if ((count >= 1 && title != "23 награды на профиль")) return <div>              
         <Button title={"-"} type={"remove"} onClick={handleDecrement} />         
         <Button title={"+"} type={"add"} onClick={handleIncrement} />   
         </div>

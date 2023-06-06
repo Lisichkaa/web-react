@@ -2,6 +2,9 @@
     padding: 21px 20px 14px;
     display: flex;
     align-items: center;
+    max-width: 390px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   .order_header {
     font-size: 17px;

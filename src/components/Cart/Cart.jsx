@@ -4,9 +4,7 @@ import {useNavigate} from 'react-router-dom'
 import ProductList from '../ProductList/ProductList';
 
 
-function Cart () {
-
-  const {tg} = telegramUse();   
+function Cart (totalAmount) {
   
   const navigate = useNavigate();
   const goBack = () => navigate(-1);

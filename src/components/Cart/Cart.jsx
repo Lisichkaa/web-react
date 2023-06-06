@@ -2,18 +2,21 @@ import React from 'react';
 import './Cart.css';
 import {useNavigate} from 'react-router-dom'
 import ProductList from '../ProductList/ProductList';
-
-const obj2 = sessionStorage.getItem('cart');
+import {useCallback, useEffect} from "react";
+import { telegramUse } from '../../telegram/telegramm';
+//
 
 function Cart (totalAmount) {
-  
+  const {tg} = telegramUse();   
+
   const navigate = useNavigate();
-  const goBack = () => navigate(-1);    
-  
+  const goBack = () => navigate(-1);   
+   
+  const obj2 = sessionStorage.getItem('cart');
   //это метод для отправки данных в бот сообщением
   const onSendData = useCallback(() => {       
         tg.sendData(JSON.stringify(obj2));
-    }, [obj2]) 
+  }, [obj2]) 
 //здесь ожидаем эвент нажатие на главную кнопку
   useEffect(() => {
     tg.onEvent('mainButtonClicked', onSendData)

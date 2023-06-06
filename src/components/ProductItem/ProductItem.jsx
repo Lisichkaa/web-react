@@ -39,7 +39,7 @@ const ProductItem = ({product, onRemove, onAdd}) => {
           </h4>          
     
           <div className="btn-container">            
-              {getButton}
+              {getButton()}
           </div>
         </div>
     );

@@ -36,8 +36,7 @@ const ProductItem = ({product, onRemove, onAdd}) => {
           </div>
           <h4 className="itemCard__title">
             {title}
-          </h4>          
-    
+          </h4>              
           <div className="btn-container">            
               {getButton()}
           </div>

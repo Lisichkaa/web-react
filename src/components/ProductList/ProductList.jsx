@@ -25,9 +25,9 @@ const ProductList = () => {
     
     useEffect(() => {
         tg.onEvent('mainButtonClicked', goNext)
-        // return () => {
-        //     tg.offEvent('mainButtonClicked', onSendData)
-        // }
+        return () => {
+            tg.offEvent('mainButtonClicked', goNext)
+        }
     }, [goNext])
 
     const onAdd = (product) => {
@@ -88,6 +88,7 @@ const ProductList = () => {
           <br /> 
           <div className="total">Total amount of points: {totalAmount}</div>               
         </div>    
+
 
         </>
     );

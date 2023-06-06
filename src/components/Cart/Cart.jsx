@@ -25,11 +25,12 @@ function Cart (totalAmount) {
   //   }
   // }, [onSendData])
   var obj = JSON.parse(sessionStorage['cart']);  
+  var obj2 = sessionStorage['cart'];
   
 
   return (
     <div class="order_header_wrap">      
-      <h2 class="order_header">Your Order{obj.total}</h2>
+      <h2 class="order_header">Your Order{obj}-{obj2}</h2>
       <div class="order_edit"> 
            <h3><button onClick={goBack}>Edit</button></h3>       
       </div>

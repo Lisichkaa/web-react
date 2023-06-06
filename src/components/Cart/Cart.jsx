@@ -21,6 +21,7 @@ function Cart () {
   const navigate = useNavigate();
   const goBack = () => navigate(-1);   
 
+  const total = sessionStorage.getItem('total');
   const addedItems = sessionStorage.getItem('cart');
   const total = addedItems.totalAmount
   const onSendData = useCallback(() => {       
@@ -53,7 +54,7 @@ function Cart () {
 
     <div className="totalAmount__container">     
           <br /> 
-          <div className="total">Total amount of points: {sessionStorage.getItem('total')}</div>                        
+          <div className="total">Total amount of points: {total}</div>                        
     </div>  
 
     </>

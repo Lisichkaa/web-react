@@ -5,12 +5,12 @@ import {useNavigate} from 'react-router-dom'
 
 const Cart = () => {
 
+  const navigate = useNavigate();
   const goBack = () => navigate(-1);
 
   return (
-      <div className={"cart"}>
-        <button onClick={goBack}>Edit</button>
-            <h3>Your order</h3>
+      <div className={"cart"}>        
+            <h3>Your order</h3> <br/><button onClick={goBack}>Edit</button>
       </div>
     );
 };

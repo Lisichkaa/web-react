@@ -20,3 +20,19 @@
     font-weight: 500;
     color: #31b545;;
   }
+  
+  .order_container{
+    max-width: 390px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .totalAmount__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12px;
+    margin: 5px 15px;
+    max-width: 390px;
+  }

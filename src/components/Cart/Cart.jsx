@@ -48,7 +48,11 @@ function Cart () {
                     product={item}
                 />
             ))}
-        </div>     
+    </div>    
+    <div className="totalAmount__container">     
+          <br /> 
+          <div className="total">Total amount of points: {addedItems.totalAmount}</div>                        
+    </div>  
 
     </>
     

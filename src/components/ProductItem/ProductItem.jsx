@@ -26,18 +26,25 @@ const ProductItem = ({product, onRemove, onAdd}) => {
             <img src={Image} alt={title} />
           </div>
           <h4 className="itemCard__title">
-            {amount} points
+            {title}
           </h4>
     
           <div className="btn-container">
             
-            { (count !== 0) ? (
+            { (count !== 0 && title != "23 награды на профиль") ? (              
               <div>              
                <Button title={"-"} type={"remove"} onClick={handleDecrement} />         
                <Button title={"+"} type={"add"} onClick={handleIncrement} />   
                </div>
             ) : (
               <Button title={"Add"} type={"add"} onClick={handleIncrement}/>
+            )}      
+             { (count === 1 && title === "23 награды на профиль") ? (              
+              <div>   
+               <Button title={"-"} type={"remove"} onClick={handleDecrement} />                
+               </div>
+            ) : (
+              <Button title={"Add"} type={"add"} onClick={handleIncrement}/>  
             )}     
           </div>
         </div>

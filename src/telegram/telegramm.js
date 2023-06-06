@@ -6,17 +6,18 @@ export function telegramUse() {
         tg.close()
     }
 
-    const onToggleButton = () => {
+    const onSetName = () => {
         if(tg.MainButton.isVisible) {
-            tg.MainButton.hide();
-        } else {
-            tg.MainButton.show();
-        }
+            tg.MainButton.setParams({
+                text: `Купить`
+        })
     }
+}
+
 
     return {
         onClose,
-        onToggleButton,
+        onSetName,
         tg,
         user: tg.initDataUnsafe.user,
         queryId: tg.initDataUnsafe?.query_id,

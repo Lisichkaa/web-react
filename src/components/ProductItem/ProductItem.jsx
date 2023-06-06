@@ -27,24 +27,23 @@ const ProductItem = ({product, onRemove, onAdd}) => {
           </div>
           <h4 className="itemCard__title">
             {title}
-          </h4>
+          </h4>          
     
-          <div className="btn-container">
-            
-            { (count !== 0 && title != "23 награды на профиль") ? (              
-              <div>              
-               <Button title={"-"} type={"remove"} onClick={handleDecrement} />         
-               <Button title={"+"} type={"add"} onClick={handleIncrement} />   
-               </div>
-            ) : (
-              <Button title={"Add"} type={"add"} onClick={handleIncrement}/>
-            )}      
-             { (count === 1 && title === "23 награды на профиль") ? (              
+          <div className="btn-container">            
+            { (count === 0 && title != "23 награды на профиль") ? (              
               <div>   
-               <Button title={"-"} type={"remove"} onClick={handleDecrement} />                
+                <Button title={"Add"} type={"add"} onClick={handleIncrement}/>  
                </div>
             ) : (
-              <Button title={"Add"} type={"add"} onClick={handleIncrement}/>  
+              <Button title={"-"} type={"remove"} onClick={handleDecrement} /> 
+            )}   
+            { (count === 0 && title === "23 награды на профиль") ? (  
+                <Button title={"Add"} type={"add"} onClick={handleIncrement}/> 
+            ) : (
+              <div>              
+              <Button title={"-"} type={"remove"} onClick={handleDecrement} />         
+              <Button title={"+"} type={"add"} onClick={handleIncrement} />   
+              </div>
             )}     
           </div>
         </div>

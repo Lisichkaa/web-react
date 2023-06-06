@@ -1,7 +1,6 @@
 import React from 'react';
 import './Cart.css';
 import {useNavigate} from 'react-router-dom'
-import ProductList from '../ProductList/ProductList';
 import CartItem from '../CartItem/CartItem';
 import {useCallback, useEffect} from "react";
 import { telegramUse } from '../../telegram/telegramm';
@@ -18,7 +17,7 @@ const Cart = () => {
   const goBack = () => navigate(-1);   
 
   const total = sessionStorage.getItem('total');
-  var orderItems = sessionStorage.getItem('items');
+  const orderItems = sessionStorage.getItem('items');
   const addedItems = sessionStorage.getItem('cart');
 
   const onSendData = useCallback(() => {       
@@ -41,13 +40,13 @@ const Cart = () => {
       </div>      
     </div>
 
-    {/* <div className='order_container'>    
+    <div className='order_container'>    
         {orderItems.map(item => (
           <CartItem
             product={item}
           />
       ))}
-    </div>     */}
+    </div>    
 
     <div className="totalAmount__container">     
           <br /> 

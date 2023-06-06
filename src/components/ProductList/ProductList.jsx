@@ -3,6 +3,7 @@ import './ProductList.css';
 import ProductItem from "../ProductItem/ProductItem";
 import { telegramUse } from '../../telegram/telegramm';
 import {useCallback, useEffect} from "react";
+import {useNavigate} from 'react-router-dom'
 
 const { getData } = require("../../db/db");
 const products = getData();
@@ -18,15 +19,17 @@ const ProductList = () => {
             totalAmount: totalAmount
         }
         tg.sendData(JSON.stringify(data));
-    }, [addedItems, totalAmount])  
+    }, [addedItems, totalAmount]) 
+    
+    const goNext = () => navigate('ordersummary');
     
     
     useEffect(() => {
-        tg.onEvent('mainButtonClicked', onSendData)
-        return () => {
-            tg.offEvent('mainButtonClicked', onSendData)
-        }
-    }, [onSendData])
+        tg.onEvent('mainButtonClicked', goNext)
+        // return () => {
+        //     tg.offEvent('mainButtonClicked', onSendData)
+        // }
+    }, [goNext])
 
     const onAdd = (product) => {
         const alreadyAdded = addedItems.find(item => item.id === product.id);

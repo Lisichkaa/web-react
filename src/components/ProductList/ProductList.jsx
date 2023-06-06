@@ -13,16 +13,15 @@ const ProductList = () => {
     const {tg, queryId, onClose, user} = telegramUse();   
     const totalAmount = addedItems.reduce((a,c)=>a + c.amount * c.quantity, 0);
 
-    const onSendData = useCallback(() => {
-        const data = {
-            products: addedItems,
-            totalAmount: totalAmount
-        }
-        tg.sendData(JSON.stringify(data));
-    }, [addedItems, totalAmount]) 
+    // const onSendData = useCallback(() => {
+    //     const data = {
+    //         products: addedItems,
+    //         totalAmount: totalAmount
+    //     }
+    //     tg.sendData(JSON.stringify(data));
+    // }, [addedItems, totalAmount]) 
     
-    const goNext = () => navigate('ordersummary');
-    
+    const goNext = () => navigate('ordersummary');    
     
     useEffect(() => {
         tg.onEvent('mainButtonClicked', goNext)
@@ -45,10 +44,7 @@ const ProductList = () => {
         setAddedItems(newItems)
 
         if(newItems.length >= 1) {
-            tg.MainButton.show();
-            tg.MainButton.setParams({
-                text: `Купить`
-            })
+            tg.MainButton.show();            
         } else {
             tg.MainButton.hide();            
         }
@@ -70,9 +66,6 @@ const ProductList = () => {
 
         if(newItems.length >= 1) {
             tg.MainButton.show();
-            tg.MainButton.setParams({
-                text: `Купить`
-            })
         } else {
             tg.MainButton.hide();            
         }

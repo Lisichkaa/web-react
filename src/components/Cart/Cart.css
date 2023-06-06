@@ -1,6 +1,19 @@
-.form {
+.order_header_wrap {
+    padding: 21px 20px 14px;
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 20px;
-}
+    align-items: center;
+  }
+  .order_header {
+    font-size: 17px;
+    line-height: 21px;
+    text-transform: uppercase;
+    flex-grow: 1;
+    padding: 0;
+    margin: 0;
+  }
+  .order_edit {
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 500;
+    color: #31b545;;
+  }

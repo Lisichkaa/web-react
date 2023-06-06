@@ -9,9 +9,13 @@ import { telegramUse } from '../../telegram/telegramm';
 function Cart () {
   const {tg, onSetName } = telegramUse();   
 
-  useEffect(() => {
-    tg.ready();
-  }, [])
+  // useEffect(() => {
+  //   tg.ready();
+  // }, [])
+
+  tg.MainButton.setParams({
+    text: `Купить`
+  });
 
   const navigate = useNavigate();
   const goBack = () => navigate(-1);   

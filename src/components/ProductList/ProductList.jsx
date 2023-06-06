@@ -32,7 +32,7 @@ const ProductList = () => {
     }, [goNext])
 
 
-    const itemCart =  addedItems[0].title;
+    const itemCart =  addedItems.title;
 
     Cart(addedItems);
 

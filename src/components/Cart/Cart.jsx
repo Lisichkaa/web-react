@@ -24,11 +24,12 @@ function Cart (totalAmount) {
   //       tg.offEvent('mainButtonClicked', onSendData)
   //   }
   // }, [onSendData])
-
+  var obj = JSON.parse(sessionStorage['cart']);  
+  
 
   return (
     <div class="order_header_wrap">      
-      <h2 class="order_header">Your Order</h2>
+      <h2 class="order_header">Your Order{obj.total}</h2>
       <div class="order_edit"> 
            <h3><button onClick={goBack}>Edit</button></h3>       
       </div>

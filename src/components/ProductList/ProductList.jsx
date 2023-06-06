@@ -15,6 +15,13 @@ const ProductList = () => {
     const {tg, queryId, onClose, user} = telegramUse();   
     const totalAmount = addedItems.reduce((a,c)=>a + c.amount * c.quantity, 0);
     
+    var data = {
+        products: addedItems,
+        totalAmount: totalAmount
+    };
+    sessionStorage.setItem('cart', JSON.stringify(data));   
+    
+
     const navigate = useNavigate();
     const goNext = () => navigate('ordersummary');  
     

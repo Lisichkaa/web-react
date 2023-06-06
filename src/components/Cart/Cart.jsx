@@ -3,8 +3,8 @@ import './Cart.css';
 
 const Cart = () => {
     return (
-      <div className={"form"}>
-            <h3>Введите ваши данные</h3>
+      <div className={"cart"}>
+            <h3>Your order</h3>
       </div>
     );
 };

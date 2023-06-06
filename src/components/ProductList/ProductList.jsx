@@ -15,15 +15,8 @@ const ProductList = () => {
     const {tg, queryId, onClose, user} = telegramUse();   
     const totalAmount = addedItems.reduce((a,c)=>a + c.amount * c.quantity, 0);
     
-    // const onSendData = useCallback(() => {
-    //     const data = {
-    //         products: addedItems,
-    //         totalAmount: totalAmount
-    //     }
-    //     tg.sendData(JSON.stringify(data));
-    // }, [addedItems, totalAmount]) 
     const navigate = useNavigate();
-    const goNext = () => navigate('ordersummary');    
+    const goNext = () => navigate('ordersummary');  
     
     useEffect(() => {
         tg.onEvent('mainButtonClicked', goNext)
@@ -90,9 +83,7 @@ const ProductList = () => {
         <div className="totalAmount__container">     
           <br /> 
           <div className="total">Total amount of points: {totalAmount}</div>                        
-        </div>    
-
-
+        </div> 
         </>
     );
 };

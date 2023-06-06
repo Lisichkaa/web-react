@@ -47,7 +47,10 @@ const ProductList = () => {
         setAddedItems(newItems)
 
         if(newItems.length >= 1) {
-            tg.MainButton.show();            
+            tg.MainButton.show();
+            tg.MainButton.setParams({
+                text: `Continue`
+              });            
         } else {
             tg.MainButton.hide();            
         }
@@ -69,6 +72,9 @@ const ProductList = () => {
 
         if(newItems.length >= 1) {
             tg.MainButton.show();
+            tg.MainButton.setParams({
+                text: `Continue`
+              });
         } else {
             tg.MainButton.hide();            
         }

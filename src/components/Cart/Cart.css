@@ -11,7 +11,7 @@
     padding: 0;
     margin: 0;
   }
-  .order_edit {
+  .order_edit button {
     font-size: 15px;
     line-height: 18px;
     font-weight: 500;

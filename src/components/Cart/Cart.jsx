@@ -30,7 +30,7 @@ function Cart (totalAmount) {
     <div class="order_header_wrap">      
       <h2 class="order_header">Your Order</h2>
       <div class="order_edit"> 
-           <h3>Your order <button onClick={goBack}>Edit</button></h3>       
+           <h3><button onClick={goBack}>Edit</button></h3>       
       </div>
   </div>
     );

@@ -9,11 +9,14 @@ import Cart from "../Cart/Cart";
 const { getData } = require("../../db/db");
 const products = getData();
 
+let cartItems = [];
+
 const ProductList = () => {
     const [addedItems, setAddedItems] = useState([]);
     const {tg, queryId, onClose, user} = telegramUse();   
     const totalAmount = addedItems.reduce((a,c)=>a + c.amount * c.quantity, 0);
     
+    cartItems = addedItems;
     // const onSendData = useCallback(() => {
     //     const data = {
     //         products: addedItems,
@@ -89,7 +92,7 @@ const ProductList = () => {
         </div>     
         <div className="totalAmount__container">     
           <br /> 
-          <div className="total">Total amount of points: {totalAmount}</div>                        
+          <div className="total">Total amount of points: {cartItems}</div>                        
         </div>    
 
 

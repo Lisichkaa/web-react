@@ -16,7 +16,7 @@ function App() {
         <div className="App">
            { <Routes>
                 <Route index element={<ProductList />}/>
-                <Route path={'сart'} element={<Cart />}/>
+                <Route path={'form'} element={<Cart />}/>
             </Routes> }
         </div>
     );

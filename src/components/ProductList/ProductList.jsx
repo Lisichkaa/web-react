@@ -92,7 +92,7 @@ const ProductList = () => {
         </div>     
         <div className="totalAmount__container">     
           <br /> 
-          <div className="total">Total amount of points: {cartItems.title}</div>                        
+          <div className="total">Total amount of points: {cartItems[0].title}</div>                        
         </div>    
 
 

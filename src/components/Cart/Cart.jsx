@@ -3,13 +3,13 @@ import './Cart.css';
 import {useNavigate} from 'react-router-dom'
 import ProductList from '../ProductList/ProductList';
 
+const obj2 = sessionStorage.getItem('cart');
 
 function Cart (totalAmount) {
   
   const navigate = useNavigate();
-  const goBack = () => navigate(-1);
-     
-  var obj2 = sessionStorage.getItem('cart');
+  const goBack = () => navigate(-1);    
+  
   //это метод для отправки данных в бот сообщением
   const onSendData = useCallback(() => {       
         tg.sendData(JSON.stringify(obj2));

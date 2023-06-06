@@ -40,13 +40,13 @@ const Cart = () => {
       </div>      
     </div>
 
-    <div className='order_container'>    
+    {/* <div className='order_container'>    
         {orderItems.map(item => (
           <CartItem
             product={item}
           />
       ))}
-    </div>    
+    </div>     */}
 
     <div className="totalAmount__container">     
           <br /> 

@@ -31,7 +31,7 @@ const ProductList = () => {
         }
     }, [goNext])
 
-    Cart(addedItems);
+    //Cart(addedItems);
 
     const onAdd = (product) => {
         const alreadyAdded = addedItems.find(item => item.id === product.id);

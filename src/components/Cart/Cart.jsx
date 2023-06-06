@@ -21,7 +21,7 @@ function Cart () {
   const navigate = useNavigate();
   const goBack = () => navigate(-1);   
 
-  const total = sessionStorage.getItem('total');
+  var total = sessionStorage.getItem('total');
   const addedItems = sessionStorage.getItem('cart');
   const total = addedItems.totalAmount
   const onSendData = useCallback(() => {       

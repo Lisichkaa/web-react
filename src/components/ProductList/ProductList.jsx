@@ -21,7 +21,7 @@ const ProductList = () => {
     //     tg.sendData(JSON.stringify(data));
     // }, [addedItems, totalAmount]) 
     
-    const goNext = () => navigate('ordersummary');    
+    const goNext = () => navigate('/ordersummary');    
     
     useEffect(() => {
         tg.onEvent('mainButtonClicked', goNext)

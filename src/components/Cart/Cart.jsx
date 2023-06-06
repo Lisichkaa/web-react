@@ -22,6 +22,7 @@ function Cart () {
   const goBack = () => navigate(-1);   
 
   const addedItems = sessionStorage.getItem('cart');
+  const total = addedItems.totalAmount
   const onSendData = useCallback(() => {       
         tg.sendData(addedItems);
   }, [addedItems]) 
@@ -49,9 +50,10 @@ function Cart () {
                 />
             ))}
     </div>     */}
+
     <div className="totalAmount__container">     
           <br /> 
-          <div className="total">Total amount of points: {addedItems.totalAmount}</div>                        
+          <div className="total">Total amount of points: {sessionStorage.getItem('total')}</div>                        
     </div>  
 
     </>

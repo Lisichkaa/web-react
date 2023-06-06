@@ -79,6 +79,9 @@ const ProductList = () => {
             tg.MainButton.hide();            
         }
     }
+    tg.MainButton.setParams({
+        text: `Continue`
+      });
 
     return (
         <>

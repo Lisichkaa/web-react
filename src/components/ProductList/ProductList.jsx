@@ -31,9 +31,6 @@ const ProductList = () => {
         }
     }, [goNext])
 
-
-    const itemCart =  addedItems.title;
-
     Cart(addedItems);
 
     const onAdd = (product) => {
@@ -92,7 +89,7 @@ const ProductList = () => {
         </div>     
         <div className="totalAmount__container">     
           <br /> 
-          <div className="total">Total amount of points: {itemCart}</div>                        
+          <div className="total">Total amount of points: {totalAmount}</div>                        
         </div>    
 
 

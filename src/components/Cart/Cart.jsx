@@ -7,12 +7,8 @@ import {useCallback, useEffect} from "react";
 import { telegramUse } from '../../telegram/telegramm';
 //
 
-function Cart () {
-  const {tg, onSetName } = telegramUse();   
-
-  // useEffect(() => {
-  //   tg.ready();
-  // }, [])
+const Cart = () => {
+  const {tg} = telegramUse();   
 
   tg.MainButton.setParams({
     text: `Оформить заказ`
@@ -21,7 +17,7 @@ function Cart () {
   const navigate = useNavigate();
   const goBack = () => navigate(-1);   
 
-  var total = sessionStorage.getItem('total');
+  const total = sessionStorage.getItem('total');
   var orderItems = sessionStorage.getItem('items');
   const addedItems = sessionStorage.getItem('cart');
 
@@ -45,19 +41,18 @@ function Cart () {
       </div>      
     </div>
 
-    <div className='order_container'>    
-            {orderItems.map(item => (
-                <CartItem
-                    product={item}
-                />
-            ))}
-    </div>    
+    {/* <div className='order_container'>    
+        {orderItems.map(item => (
+          <CartItem
+            product={item}
+          />
+      ))}
+    </div>     */}
 
     <div className="totalAmount__container">     
           <br /> 
           <div className="total">Total amount of points: {total}</div>                        
     </div>  
-
     </>
     
     );

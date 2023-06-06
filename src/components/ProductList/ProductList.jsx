@@ -18,7 +18,7 @@ const ProductList = () => {
         totalAmount: totalAmount
     };
     sessionStorage.setItem('cart', JSON.stringify(data));   
-    sessionStorage.setItem('item', addedItems);
+    sessionStorage.setItem('items', addedItems);
     sessionStorage.setItem('total', totalAmount);
     
 

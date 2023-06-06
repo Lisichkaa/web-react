@@ -22,8 +22,9 @@ function Cart () {
   const goBack = () => navigate(-1);   
 
   var total = sessionStorage.getItem('total');
+  var orderItems = sessionStorage.getItem('items');
   const addedItems = sessionStorage.getItem('cart');
-  //const total = addedItems.totalAmount
+
   const onSendData = useCallback(() => {       
         tg.sendData(addedItems);
   }, [addedItems]) 
@@ -44,13 +45,13 @@ function Cart () {
       </div>      
     </div>
 
-    {/* <div className='order_container'>    
-            {addedItems.products.map(item => (
+    <div className='order_container'>    
+            {orderItems.map(item => (
                 <CartItem
                     product={item}
                 />
             ))}
-    </div>     */}
+    </div>    
 
     <div className="totalAmount__container">     
           <br /> 

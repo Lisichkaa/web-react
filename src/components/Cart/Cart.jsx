@@ -11,11 +11,11 @@ function Cart (totalAmount) {
 
   const navigate = useNavigate();
   const goBack = () => navigate(-1);   
-   
+
   const obj2 = sessionStorage.getItem('cart');
   //это метод для отправки данных в бот сообщением
   const onSendData = useCallback(() => {       
-        tg.sendData(JSON.stringify(obj2));
+        tg.sendData(obj2);
   }, [obj2]) 
 //здесь ожидаем эвент нажатие на главную кнопку
   useEffect(() => {

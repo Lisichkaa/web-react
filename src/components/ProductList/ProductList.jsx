@@ -3,13 +3,6 @@ import './ProductList.css';
 import ProductItem from "../ProductItem/ProductItem";
 import { telegramUse } from '../../telegram/telegramm';
 import {useCallback, useEffect} from "react";
-// const products = [
-//     { title: "Белочка", amount: 100, Image: squirrelImg, id:1 },
-//     { title: "Вопросики", amount: 1000, Image: questionImg,id:2 },
-//     { title: "Булочка с листиком", amount: 99999, Image: cakeImg, id:6 },
-//     { title: "Кофе", amount: 10000, Image: coffeeImg , id:3},
-//     { title: "Булочка с листиком", amount: 0, Image: cakeImg, id:5 },
-// ]
 
 const { getData } = require("../../db/db");
 const products = getData();
@@ -26,6 +19,7 @@ const ProductList = () => {
         }
         tg.sendData(JSON.stringify(data));
     }, [addedItems, totalAmount])  
+    
     
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)

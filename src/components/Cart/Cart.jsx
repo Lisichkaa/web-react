@@ -1,4 +1,10 @@
+import React from 'react';
+import './Cart.css';
 
-function Home() {
-    return <h2>Добро пожаловать на главную страницу</h2>;
-  }
+const Cart = () => {
+    return (
+      <div>Hello, Cart!</div>
+    );
+};
+
+export default Cart;
